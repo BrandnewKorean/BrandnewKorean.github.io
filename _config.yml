@@ -1,0 +1,17 @@
+# Site settings
+title: WWD
+description: "Dev Blog by BrandnewKorean"
+url: "https://brandnewkorean.github.io"
+baseurl: ""
+lang: "ko_KR"
+timezone: "Asia/Seoul"
+
+#Author
+author:
+  name: BrandnewKorean
+  email: brandnewkorean@naver.com
+  url: "https://brandnewkorean.github.io"
+
+#Posts
+posts:
+  url: "/posts"
