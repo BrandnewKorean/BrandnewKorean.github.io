@@ -1,5 +1,7 @@
 ---
-layout: default
+layout: landing
 title: "WebDeveloper"
 ---
-개발 중
+<div class="">
+  asdasd
+</div>
