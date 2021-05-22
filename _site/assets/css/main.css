@@ -263,7 +263,7 @@ body.dark #landing .bg2 .tech-wrap .tech-row .image-wrap .black_image {
 body.dark #landing .bg3 {
   background-color: black; }
 
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   #landing .modal #text1 {
     font-size: 2rem; }
 
