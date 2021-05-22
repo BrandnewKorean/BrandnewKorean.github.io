@@ -15,11 +15,11 @@ html, body {
   height: 100%; }
 
 * {
-  font-family: "NanumSquare", sans-serif;
-  font-weight: 600; }
+  font-family: "NanumSquare", sans-serif; }
 
 button {
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none; }
 
 .container {
   max-width: 80%;
@@ -29,6 +29,9 @@ button {
   border: none;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0); }
+
+.sticky {
+  position: sticky; }
 
 #header {
   position: fixed;
@@ -51,10 +54,11 @@ button {
   display: inline-block;
   margin-right: 2em;
   text-decoration: none;
-  color: black; }
+  color: black;
+  font-weight: 600; }
 
 #header .link-wrap a:hover {
-  font-weight: bold; }
+  font-weight: 800; }
 
 #header .link-wrap #header-menu {
   position: relative;
@@ -116,7 +120,7 @@ button {
   padding-left: var(--pd-left);
   padding-right: var(--pd-right);
   text-align: center;
-  z-index: 1000; }
+  z-index: 999; }
 
 #footer .setting {
   float: left; }
@@ -127,15 +131,14 @@ button {
   height: 50px;
   background-color: white;
   color: black;
-  border: 2px solid black;
-  border-radius: 50%;
   border: none;
+  border-radius: 50%;
   transition: all .5s; }
 
 #footer .setting #change-mode:hover {
   background-color: black;
   color: white;
-  border: 2px solid white; }
+  border: none; }
 
 #footer .logo {
   text-decoration: none;
@@ -154,28 +157,86 @@ button {
   width: 30px;
   height: 30px; }
 
-#landing .bg {
+#landing .contents {
+  padding-top: calc(var(--pd-top) + var(--pd-bottom) + var(--header-height));
+  color: black; }
+
+#landing .modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); }
+
+#landing .bg1 {
   width: 100%;
   height: 100vh;
   background-image: url("/assets/images/bg1.png");
   background-position: center; }
 
-#landing .bg .modal {
+#landing .modal {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.5); }
 
-#landing .bg .modal .contents {
-  padding-top: calc(var(--pd-top) + var(--pd-bottom) + var(--header-height));
-  color: black; }
+#landing .modal #text1 {
+  opacity: 0;
+  font-size: 5rem; }
 
-#landing .bg .modal #text1 {
-  opacity: 0; }
+#landing .bg2 {
+  background-image: url("/assets/images/bg2.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+#landing .bg2 .title {
+  font-size: 2rem;
+  font-weight: 700; }
+
+#landing .bg2 .tech-wrap {
+  padding-bottom: 50px; }
+
+#landing .bg2 .tech-wrap .tech-title {
+  font-size: 1.5rem; }
+
+#landing .bg2 .tech-wrap .tech-row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-top: 2em; }
+
+#landing .bg2 .tech-wrap .tech-row .image-wrap {
+  position: relative;
+  top: 50px;
+  width: calc(40% / 3);
+  opacity: 0;
+  transition: .5s ease; }
+
+#landing .bg2 .tech-wrap .tech-row .image-wrap.active {
+  opacity: 1;
+  top: 0; }
+
+#landing .bg2 .tech-wrap .tech-row .text-wrap {
+  width: calc((60% - 5% * 2) / 3);
+  opacity: 0;
+  padding: 0 5%;
+  transition: .5s ease;
+  transition-delay: .5s;
+  font-size: 1.5rem; }
+
+#landing .bg2 .tech-wrap .tech-row .text-wrap.active {
+  opacity: 1; }
+
+#landing .bg3 {
+  background-color: white; }
+
+#landing .bg3 .title {
+  font-size: 2rem; }
 
 body.dark #header .link-wrap a {
   color: white; }
 body.dark #header .link-wrap #header-menu span {
   background-color: white; }
+body.dark #header .link-wrap #header-menu.active span {
+  background-color: black; }
 body.dark #footer {
   color: white; }
 body.dark #footer .logo {
@@ -190,10 +251,32 @@ body.dark #footer .setting #change-mode:hover {
   border: 2px solid black; }
 body.dark #footer .icon-wrap a .icons {
   filter: invert(100%); }
-body.dark #landing .bg .modal {
+body.dark #landing .modal {
   position: relative;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); }
-body.dark #landing .bg .modal .contents {
+body.dark #landing .contents {
   color: white; }
+body.dark #landing .bg2 .tech-wrap .tech-row .image-wrap .black_image {
+  filter: invert(100%); }
+body.dark #landing .bg3 {
+  background-color: black; }
+
+@media (max-width: 800px) {
+  #landing .modal #text1 {
+    font-size: 2rem; }
+
+  #landing .bg2 {
+    background-position: center; }
+
+  #landing .bg2 .tech-wrap .tech-row {
+    flex-direction: column; }
+
+  #landing .bg2 .tech-wrap .tech-row .image-wrap {
+    width: 100%; }
+
+  #landing .bg2 .tech-wrap .tech-row .text-wrap {
+    width: calc(100% - 5% * 2);
+    text-align: center;
+    margin: 1em 0; } }
