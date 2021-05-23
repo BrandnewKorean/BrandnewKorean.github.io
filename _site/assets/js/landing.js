@@ -52,7 +52,7 @@ $(function(){
     }else if(leftMove > $(listWrap.querySelector('ul')).width() - window.innerWidth){
       leftMove = $(listWrap.querySelector('ul')).width() - window.innerWidth;
     }
-
+    
     if(window.scrollY >= $(listWrap).offset().top){
       $(listWrap).addClass('sticky').css({top: 0});
       $(listWrap.querySelector('ul')).css({transform: 'translate(-'+(leftMove)+'px, 0)'});
