@@ -1,7 +1,7 @@
 $(function(){
   $('#text1').animate({
     opacity: 1
-  }, 500);
+  }, 1000);
 
   var imageWrap = document.querySelectorAll('.image-wrap');
   var textWrap = document.querySelectorAll('.text-wrap');
