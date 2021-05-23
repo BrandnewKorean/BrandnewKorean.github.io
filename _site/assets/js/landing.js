@@ -16,6 +16,7 @@ $(function(){
   var siteTitle = document.querySelectorAll('.site-title');
   var siteButtonWrap = document.querySelectorAll('.site-button-wrap');
 
+
   if(leftMove <= 0){
     leftMove = 0;
   }else if(leftMove >= $(listWrap.querySelector('ul')).width() - window.innerWidth){
@@ -52,7 +53,7 @@ $(function(){
     }else if(leftMove > $(listWrap.querySelector('ul')).width() - window.innerWidth){
       leftMove = $(listWrap.querySelector('ul')).width() - window.innerWidth;
     }
-    
+
     if(window.scrollY >= $(listWrap).offset().top){
       $(listWrap).addClass('sticky').css({top: 0});
       $(listWrap.querySelector('ul')).css({transform: 'translate(-'+(leftMove)+'px, 0)'});
