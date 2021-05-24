@@ -15,3 +15,19 @@ author:
 #Posts
 posts:
   url: /posts
+
+#Plugins
+plugins:
+  - jekyll-paginate-v2
+
+permalink: /posts/frontend/:num
+pagination:
+  enabled: true
+  title: :title
+  per_page: 15
+  category: frontend
+  sort_reverse: true
+  sort_field: 'date'
+  trail:
+    before: 2
+    after: 2

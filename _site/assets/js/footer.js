@@ -1,6 +1,8 @@
 $(function(){
 	cookiedata = document.cookie;
 
+	console.log(cookiedata);
+
   if(cookiedata.indexOf("setting=dark") < 0){
     $('body').removeClass('dark');
     $('body').addClass('light');
@@ -37,14 +39,14 @@ $(function(){
 });
 
 function setCookie(name, value, expiredays){
-  removeCookie(name, value);
-  var today = new Date();
+	removeCookie();
+	var today = new Date();
 	today.setDate(today.getDate() + expiredays);
-	document.cookie = name+'='+escape(value)+'; expires='+today.toGMTString()+';';
+	document.cookie = name+'='+escape(value)+'; expires='+today.toGMTString()+'; url='+(window.location.protocol+'//'+window.location.host);
 }
 
 function removeCookie(name, value){
   var today = new Date();
-  today.setDate(today.getDate() - 1);
-  document.cookie = name+'='+escape(value)+'; expires='+today.toGMTString()+';';
+	today.setDate(today.getDate() - 1);
+	document.cookie = name+'='+escape(value)+'; expires='+today.toGMTString()+'; url='+(window.location.protocol+'//'+window.location.host);
 }
