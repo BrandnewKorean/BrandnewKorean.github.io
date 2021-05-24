@@ -108,6 +108,9 @@ body.dark{
 
 
 @media(max-width: 500px){
+  #footer{text-align: left;}
+  #footer .setting{position: absolute; top: -55px;}
+
   #landing .bg1 #text1{font-size: 2rem;}
 
   #landing .bg2{background-position: center;}
