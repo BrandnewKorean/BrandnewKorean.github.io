@@ -19,6 +19,7 @@ $(function(){
   var siteTitle = document.querySelectorAll('.site-title');
   var siteButtonWrap = document.querySelectorAll('.site-button-wrap');
 
+  var bg4 = document.querySelector('.bg4');
 
   if(leftMove <= 0){
     leftMove = 0;
@@ -30,14 +31,17 @@ $(function(){
     if(!$(listWrap).hasClass('sticky')) {
       listWrapTop = $(listWrap).offset().top;
       leftMove = 0;
+    }else if(window.scrollY >= Math.ceil($(bg4).offset().top)-1){
+      leftMove = $(listWrap.querySelector('ul')).width() - window.innerWidth;
+      $(listWrap.querySelector('ul')).css({transform: 'translate(-'+(leftMove)+'px, 0)'});
     }else{
       leftMove = window.scrollY - listWrapTop;
-    }
 
-    if(leftMove <= 0){
-      leftMove = 0;
-    }else if(leftMove >= $(listWrap.querySelector('ul')).width() - window.innerWidth){
-      leftMove = $(listWrap.querySelector('ul')).width() - window.innerWidth;
+      if(leftMove <= 0){
+        leftMove = 0;
+      }else if(leftMove >= $(listWrap.querySelector('ul')).width() - window.innerWidth){
+        leftMove = $(listWrap.querySelector('ul')).width() - window.innerWidth;
+      }
     }
     $(listWrap.querySelector('ul')).css({transform: 'translate(-'+(leftMove)+'px, 0)'});
   });
@@ -57,14 +61,17 @@ $(function(){
     if(!$(listWrap).hasClass('sticky')) {
       listWrapTop = $(listWrap).offset().top;
       leftMove = 0;
+    }else if(window.scrollY >= Math.ceil($(bg4).offset().top)-1){
+      leftMove = $(listWrap.querySelector('ul')).width() - window.innerWidth;
+      $(listWrap.querySelector('ul')).css({transform: 'translate(-'+(leftMove)+'px, 0)'});
     }else{
       leftMove = window.scrollY - listWrapTop;
-    }
 
-    if(leftMove < 0){
-      leftMove = 0;
-    }else if(leftMove > $(listWrap.querySelector('ul')).width() - window.innerWidth){
-      leftMove = $(listWrap.querySelector('ul')).width() - window.innerWidth;
+      if(leftMove <= 0){
+        leftMove = 0;
+      }else if(leftMove >= $(listWrap.querySelector('ul')).width() - window.innerWidth){
+        leftMove = $(listWrap.querySelector('ul')).width() - window.innerWidth;
+      }
     }
 
     if(window.scrollY >= $(listWrap).offset().top){
