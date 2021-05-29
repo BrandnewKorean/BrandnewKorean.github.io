@@ -18,16 +18,30 @@ posts:
 
 #Plugins
 plugins:
-  - jekyll-paginate-v2
+  - jekyll-paginate
+  - jekyll-sitemap
 
-permalink: /posts/frontend/:num
-pagination:
-  enabled: true
-  title: :title
-  per_page: 15
-  category: frontend
-  sort_reverse: true
-  sort_field: 'date'
-  trail:
-    before: 2
-    after: 2
+# permalink: /posts/frontend/:num
+# pagination:
+#   enabled: true
+#   title: :title
+#   per_page: 15
+#   category: frontend
+#   sort_reverse: true
+#   sort_field: 'date'
+#   trail:
+#     before: 2
+#     after: 2
+
+paginate: 5
+paginate_path: "/posts/frontend/:num"
+
+include:
+  - _pages
+
+
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
