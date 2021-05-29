@@ -5,5 +5,6 @@ gem 'tzinfo-data'
 
 gem "webrick", "~> 1.7"
 
-gem 'jekyll-paginate'
-gem 'jekyll-sitemap'
+group :jekyll_plugins do
+  gem "jekyll-paginate-v2"
+end

@@ -34,14 +34,14 @@
               <li>
                 <div class="thumbnail-box">
                   {% if post.thumbnail != null %}
-                    <a class="posts-title link" href="{{ posts.url | relative_url }}"><img src="{{ posts.thumbnail }}" width="100%" height="100%"></a>
+                    <a class="posts-title link" href="{{ post.url | relative_url }}"><img src="{{ posts.thumbnail }}" width="100%" height="100%"></a>
                   {% endif %}
                   {% if post.thumbnail == null %}
-                    <a class="posts-title link" href="{{ posts.url | relative_url }}"><img src="/assets/images/thumbnail/noImage.jpg" width="100%" height="100%"></a>
+                    <a class="posts-title link" href="{{ post.url | relative_url }}"><img src="/assets/images/thumbnail/noImage.jpg" width="100%" height="100%"></a>
                   {% endif %}
                 </div>
                 <div class="text-box">
-                  <a class="posts-title link" href="{{ posts.url | relative_url }}">{{ posts.title }}</a>
+                  <a class="posts-title link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
                   <a class="posts-date">{{ post.date | date: "%Y-%m-%d" }}</a>
                 </div>
               </li>

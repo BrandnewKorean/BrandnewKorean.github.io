@@ -18,27 +18,11 @@ posts:
 
 #Plugins
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-
-# permalink: /posts/frontend/:num
-# pagination:
-#   enabled: true
-#   title: :title
-#   per_page: 15
-#   category: frontend
-#   sort_reverse: true
-#   sort_field: 'date'
-#   trail:
-#     before: 2
-#     after: 2
-
-paginate: 5
-paginate_path: "/posts/frontend/:num"
-
-include:
-  - _pages
-
+  - jekyll-paginate-v2
+pagination:
+  enabled: true
+  per_page: 5
+  sort_reverse: true
 
 # Exclude from processing.
 exclude:
